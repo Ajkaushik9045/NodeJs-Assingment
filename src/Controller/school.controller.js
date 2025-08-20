@@ -39,7 +39,7 @@ class SchoolController {
   } catch (error) {
 
     // Handle duplicate key error
-    if (error.code === "ER_DUP_ENTRY") {
+    if (error.message?.includes("Duplicate entry")) {
       return res.status(409).json({
         status: "error",
         message: "A school already exists at these coordinates",
