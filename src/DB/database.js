@@ -38,15 +38,16 @@ export const initializeDatabase = async () => {
 
     // Create schools table
     const createSchoolsTable = `
-      CREATE TABLE IF NOT EXISTS schools (
-        id INT AUTO_INCREMENT PRIMARY KEY,
-        name VARCHAR(255) NOT NULL,
-        address VARCHAR(500) NOT NULL,
-        latitude FLOAT NOT NULL,
-        longitude FLOAT NOT NULL,
-        created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-        updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
-      )
+     CREATE TABLE IF NOT EXISTS schools (
+  id INT AUTO_INCREMENT PRIMARY KEY,
+  name VARCHAR(255) NOT NULL,
+  address VARCHAR(500) NOT NULL,
+  latitude FLOAT NOT NULL,
+  longitude FLOAT NOT NULL,
+  created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+  updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  UNIQUE KEY unique_lat_lng (latitude, longitude)
+)
     `;
 
     await connection.execute(createSchoolsTable);
