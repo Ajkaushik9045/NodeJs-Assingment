@@ -1,0 +1,29 @@
+{
+  "name": "nodejs-assingment",
+  "version": "1.0.0",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "start": "node startup.js",
+    "dev": "nodemon startup.js",
+    "server": "node index.js",
+    "init-db": "node -e \"import('./src/DB/database.js').then(db => db.initializeDatabase())\""
+  },
+  "keywords": [
+    "school-management",
+    "api",
+    "nodejs",
+    "express",
+    "mysql"
+  ],
+  "author": "",
+  "license": "ISC",
+  "description": "School Management API with Node.js, Express, and MySQL",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^17.2.1",
+    "express": "^4.19.2",
+    "mysql2": "^3.14.3",
+    "nodemon": "^3.1.10"
+  }
+}
