@@ -35,11 +35,6 @@ async function startup() {
     // Import and start the main application
     console.log('🌐 Starting Express server...');
     const app = await import('./index.js');
-    
-    console.log('🎉 School Management API is ready!');
-    console.log('📚 API Documentation: Check README.md');
-    console.log('🧪 Test with Postman: Import School_Management_API.postman_collection.json');
-    
   } catch (error) {
     console.error('❌ Startup failed:', error.message);
     process.exit(1);
